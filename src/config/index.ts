@@ -1,7 +1,6 @@
 import { z } from 'zod';
 import dotenv from 'dotenv';
-import path from 'path';
-
+import path from 'path'; 
 // Load environment variables from .env file
 dotenv.config({ path: path.join(__dirname, '../../.env') });
 
@@ -56,6 +55,7 @@ const envVarsSchema = z.object({
   BACKEND_IP: z.string().optional(),
   STRIPE_SECRET_KEY: z.string().optional(),
   STRIPE_WEBHOOK_SECRET: z.string().optional(),
+  MAILCHIMP_API_KEY:z.string().optional()
 });
 
 // Validate the environment variables
@@ -95,12 +95,12 @@ export default {
     from: envVars.data.EMAIL_FROM,
   },
   mailchimp: {
-    // apiKey: envVars.data.MAILCHIMP_API_KEY,
-    server: 'us8',
+    apiKey: envVars.data.MAILCHIMP_API_KEY,
+    server: 'usX',
   },
   titan: {
-    email: 'rakib2020.tkg@gmail.com',
-    password: 'Rakib244348',
+    email: 'info@werkstekkie.com',
+    password: 'Werkstekkie123!!',
   },
   backendIp: envVars.data.BACKEND_IP,
   stripe: {
@@ -116,7 +116,7 @@ export interface MailchimpConfig {
 
 export const config = {
   mailchimp: {
-    apiKey: 'your-api-key',
-    server: 'your-server'
+    apiKey: envVars.data.MAILCHIMP_API_KEY,
+    server: 'usX'
   }
 };

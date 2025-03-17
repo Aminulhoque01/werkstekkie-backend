@@ -14,7 +14,7 @@ const joinNewsletter = async (email: string): Promise<any> => {
         );
     }
     const newsLetter = await NewsLetter.create({ email });
-    await mailchimp.lists.addListMember('c5500a9761', {
+    await mailchimp.lists.addListMember('6b5fbc2a58', {
         email_address: email,
         status: 'subscribed',
     });
@@ -38,7 +38,7 @@ const sendNewsLetterMessage = async (
     const response = await mailchimp.campaigns.create({
         type: 'regular',
         recipients: {
-            list_id: 'c5500a9761',
+            list_id: '6b5fbc2a58',
         },
         settings: {
             subject_line: subject,
