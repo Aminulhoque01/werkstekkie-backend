@@ -43,7 +43,7 @@ const sendNewsLetterMessage = async (
         settings: {
             subject_line: subject,
             title: 'Promotional Campaign',
-            from_name: 'Horticulture Specialist',
+            from_name:'werkstekkie-bv',
             reply_to: config.titan.email, // Titan email configured here
         },
     });

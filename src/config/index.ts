@@ -96,7 +96,7 @@ export default {
   },
   mailchimp: {
     apiKey: envVars.data.MAILCHIMP_API_KEY,
-    server: 'usX',
+    server: 'us4',
   },
   titan: {
     email: 'info@werkstekkie.com',
@@ -117,6 +117,6 @@ export interface MailchimpConfig {
 export const config = {
   mailchimp: {
     apiKey: envVars.data.MAILCHIMP_API_KEY,
-    server: 'usX'
+    server: 'us4'
   }
 };
