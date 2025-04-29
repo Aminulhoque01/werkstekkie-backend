@@ -58,42 +58,42 @@ const generateEmailBody = (otp: string, type: string) => {
       ? 'We received a request to reset your password. Use the code below to reset your password.'
       : 'Thank you for joining Qeyys! Your account is almost ready. Use the code below to verify your account.';
   return `
-    <body style="background-color: #f3f4f6; font-family: 'Arial', sans-serif; color: #333; margin: 0; padding: 0;">
-      <div style="width: 80%; margin:0 auto; padding: 1rem; background-color: #f3f4f6;">
+    <body style="background-color: #e9effb; font-family: 'Arial', sans-serif; color: #333; margin: 0; padding: 0;">
+      <div style="width: 80%; margin: 0 auto; padding: 1rem; background-color: #e9effb;">
         <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); text-align: center;">
-          <!-- Logo -->
-          <img src="https://i.postimg.cc/SsVJt2ys/locksimt.gif" alt="Qeyys Logo" style="max-width: 120px; margin-bottom: 20px; border-radius: 10px;">
+            <!-- Logo -->
+          <img src="https://raw.githubusercontent.com/shadat-hossan/Image-server/refs/heads/main/werkstekkie-logo.png" alt="Qeyys Logo" style="max-width: 120px; margin-bottom: 20px; border-radius: 10px;">
 
           <!-- Header -->
-          <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937; font-family: 'Helvetica Neue', sans-serif;">${title}</h1>
+          <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #0741AD; font-family: 'Helvetica Neue', sans-serif;">${title}</h1>
 
           <!-- Introductory Text -->
           <p style="color: #4b5563; margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.5;">${introText}</p>
 
-          <!-- OTP Code Box -->
-          <div style="width: 50%; margin: 0 auto; background-color: #DB2424; color: #ffffff; pading: 0.5rem ; border-radius: 0.5rem; text-align: center;">
-           <p style="font-size: 2rem; font-weight: 800; letter-spacing: 0.1rem; margin-bottom: 1.5rem; text-transform: uppercase;">${otp}</p>
-          </div>
+            <!-- OTP Code Box -->
+              <div style="width: 50%; margin: 0 auto; background-color: #0741AD; color: #ffffff; padding: 0.5rem; border-radius: 0.5rem; text-align: center;">
+                <p style="font-size: 2rem; font-weight: 800; letter-spacing: 0.1rem; margin-bottom: 1.5rem; text-transform: uppercase;">${otp}</p>
+              </div>
 
-          <!-- Verification Instructions -->
-          <p style="color: #4b5563; margin-bottom: 1.5rem; font-size: 1rem;">Enter this code to verify your account.</p>
+              <!-- Verification Instructions -->
+              <p style="color: #4b5563; margin-bottom: 1.5rem; font-size: 1rem;">Enter this code to verify your account.</p>
 
-          <!-- Footer Text -->
-          <p style="color: #6b7280; font-size: 0.875rem; margin-top: 1.5rem;">If you did not request this verification, please ignore this email.</p>
-          <p style="color: #6b7280; font-size: 0.875rem;">Thanks, The Qeyys Team</p>
+            <!-- Footer Text -->
+            <p style="color: #6b7280; font-size: 0.875rem; margin-top: 1.5rem;">If you did not request this verification, please ignore this email.</p>
+            <p style="color: #6b7280; font-size: 0.875rem;">Thanks, The Qeyys Team</p>
 
           <!-- Expiry Information -->
-          <p style="color: #ff0000; font-size: 0.85rem; margin-top: 1.5rem;">This code expires in <span id="timer">3:00</span> minutes.</p>
-
+            <p style="color: #ff0000; font-size: 0.85rem; margin-top: 1.5rem;">This code expires in <span id="timer">3:00</span> minutes.</p>
         </div>
       </div>
     </body>
+
   `;
 };
 
 // Function to send email verification
 const sendEmailVerification = async (to: string, otp: string) => {
-  const subject = 'Thera Track - Account Verification Code';
+  const subject = 'Werkstekkie - Account Verification Code';
   const html = generateEmailBody(otp, 'Account Verification');
   await sendEmail({ to, subject, html });
 };
@@ -105,4 +105,4 @@ const sendResetPasswordEmail = async (to: string, otp: string) => {
   await sendEmail({ to, subject, html });
 };
 
-export { sendEmailVerification, sendResetPasswordEmail,sendEmail };
+export { sendEmailVerification, sendResetPasswordEmail, sendEmail };
