@@ -62,7 +62,7 @@ const generateEmailBody = (otp: string, type: string) => {
       <div style="width: 80%; margin: 0 auto; padding: 1rem; background-color: #e9effb;">
         <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); text-align: center;">
             <!-- Logo -->
-          <img src="https://raw.githubusercontent.com/shadat-hossan/Image-server/refs/heads/main/werkstekkie-logo.png" alt="Qeyys Logo" style="max-width: 120px; margin-bottom: 20px; border-radius: 10px;">
+          <img src="https://i.postimg.cc/7hxxtRLC/new-logo.png" alt="Qeyys Logo" style="max-width: 120px; margin-bottom: 20px; border-radius: 10px;">
 
           <!-- Header -->
           <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #0741AD; font-family: 'Helvetica Neue', sans-serif;">${title}</h1>
