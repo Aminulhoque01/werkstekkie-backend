@@ -1,0 +1,41 @@
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
+  # Node.js application service
+  app:
+    build:
+      context: .
+      
+    container_name: job-posting-app
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb://root:example@mongodb:27017/jobposting?authSource=admin
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app       # Adjust this path if your app code is inside the 'app' directory
+    working_dir: /app
+    command: npm run dev
+    networks:
+      - app-network
+
+# Volumes
+volumes:
+  mongodb_data: {}
+
+# Networks
+networks:
+  app-network: {}
